@@ -1,65 +1,148 @@
-import Image from "next/image";
+import Link from "next/link";
+import { DownloadCta } from "@/components/DownloadCta";
+import { APP_VERSION, SITE_URL, DOWNLOADS_BASE } from "@/lib/release";
+
+const CHANNELS = [
+  "WhatsApp",
+  "LinkedIn",
+  "Instagram",
+  "Telegram",
+  "Email",
+  "X DMs",
+  "iMessage",
+];
+
+const FEATURES = [
+  {
+    k: "01",
+    title: "One inbox, every channel",
+    body: "WhatsApp, LinkedIn, Instagram, Telegram, email, X DMs and iMessage land in a single timeline. No more app-switching to follow one relationship.",
+  },
+  {
+    k: "02",
+    title: "Organized by person",
+    body: "Convolios resolves handles across apps into one human. A contract in email and a follow-up on WhatsApp sit in the same thread — automatically.",
+  },
+  {
+    k: "03",
+    title: "AI triage",
+    body: "Every inbound message is classified — urgent, human, newsletter, notification, noise — so the things that need you surface first.",
+  },
+  {
+    k: "04",
+    title: "Screener",
+    body: "Unknown contacts wait in a pending queue. Approve who reaches your main inbox and keep the noise out.",
+  },
+  {
+    k: "05",
+    title: "Circles",
+    body: "Tag people into Work, Family, Investors or anything else — surfaced as colored rings on avatars across the inbox.",
+  },
+  {
+    k: "06",
+    title: "Realtime, always",
+    body: "Live updates over Supabase Realtime with automatic fallback polling, so the inbox is never stale.",
+  },
+];
 
 export default function Home() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: "Convolios",
+    applicationCategory: "CommunicationApplication",
+    operatingSystem: "macOS, Windows",
+    offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+    softwareVersion: APP_VERSION,
+    url: SITE_URL,
+  };
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
+      {/* Hero */}
+      <section className="relative overflow-hidden border-b border-line">
+        <div className="grid-lines pointer-events-none absolute inset-0 opacity-40" aria-hidden />
+        <div className="relative mx-auto max-w-6xl px-5 py-24 sm:py-32">
+          <p className="eyebrow mb-6">One inbox · organized by person</p>
+          <h1 className="max-w-3xl text-balance text-4xl font-semibold leading-[1.05] tracking-tight sm:text-6xl">
+            The single source of truth for every conversation.
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+          <p className="mt-6 max-w-xl text-lg leading-relaxed text-fg-muted">
+            Convolios merges every messaging channel into one AI-enriched inbox —
+            organized by the person you’re talking to, not the app they happened
+            to use.
+          </p>
+          <div className="mt-10">
+            <DownloadCta />
+          </div>
+        </div>
+      </section>
+
+      {/* Channels */}
+      <section id="channels" className="border-b border-line">
+        <div className="mx-auto max-w-6xl px-5 py-14">
+          <p className="eyebrow mb-6">Connected channels</p>
+          <div className="flex flex-wrap gap-3">
+            {CHANNELS.map((c) => (
+              <span
+                key={c}
+                className="border border-line px-4 py-2 font-mono text-sm text-fg-muted"
+              >
+                {c}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Features */}
+      <section id="features" className="border-b border-line">
+        <div className="mx-auto max-w-6xl px-5 py-20">
+          <p className="eyebrow mb-3">What it does</p>
+          <h2 className="mb-12 max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl">
+            Built for people who run their relationships across a dozen apps.
+          </h2>
+          <div className="grid grid-cols-1 gap-px border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
+            {FEATURES.map((f) => (
+              <div key={f.k} className="bg-ink p-8">
+                <span className="font-mono text-xs text-fg-faint">{f.k}</span>
+                <h3 className="mt-4 text-lg font-medium text-fg">{f.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-fg-muted">
+                  {f.body}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section>
+        <div className="mx-auto max-w-6xl px-5 py-24 text-center">
+          <h2 className="mx-auto max-w-2xl text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
+            Stop context-switching. Start with one inbox.
+          </h2>
+          <p className="mx-auto mt-4 max-w-md text-fg-muted">
+            Free during early access. macOS available now, Windows soon.
+          </p>
+          <div className="mt-10 flex justify-center">
+            <Link
+              href="/download"
+              className="border border-fg bg-fg px-6 py-3 text-sm font-medium text-ink transition-colors hover:bg-transparent hover:text-fg"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+              Download Convolios
+            </Link>
+          </div>
+          <p className="mt-6 font-mono text-xs text-fg-faint">
+            {DOWNLOADS_BASE.replace("https://", "")} · v{APP_VERSION}
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </section>
+    </>
   );
 }
