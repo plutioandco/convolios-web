@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { DownloadGrid } from "@/components/DownloadGrid";
-import { APP_VERSION } from "@/lib/release";
+import { getLatestVersion } from "@/lib/release";
 
 export const metadata: Metadata = {
   title: "Download",
@@ -9,7 +9,8 @@ export const metadata: Metadata = {
   alternates: { canonical: "/download" },
 };
 
-export default function DownloadPage() {
+export default async function DownloadPage() {
+  const version = await getLatestVersion();
   return (
     <section>
       <div className="mx-auto max-w-4xl px-5 py-20">
@@ -29,7 +30,7 @@ export default function DownloadPage() {
         <div className="mt-12 grid grid-cols-1 gap-px border border-line bg-line sm:grid-cols-3">
           <div className="bg-ink p-6">
             <p className="eyebrow mb-2">Version</p>
-            <p className="font-mono text-sm text-fg">v{APP_VERSION}</p>
+            <p className="font-mono text-sm text-fg">v{version}</p>
           </div>
           <div className="bg-ink p-6">
             <p className="eyebrow mb-2">Auto-update</p>

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { HeroShowcase } from "@/components/HeroShowcase";
-import { APP_VERSION, SITE_URL, DOWNLOADS_BASE } from "@/lib/release";
+import { getLatestVersion, SITE_URL, DOWNLOADS_BASE } from "@/lib/release";
 
 const CHANNELS = [
   "WhatsApp",
@@ -45,7 +45,8 @@ const FEATURES = [
   },
 ];
 
-export default function Home() {
+export default async function Home() {
+  const version = await getLatestVersion();
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
@@ -53,7 +54,7 @@ export default function Home() {
     applicationCategory: "CommunicationApplication",
     operatingSystem: "macOS, Windows",
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-    softwareVersion: APP_VERSION,
+    softwareVersion: version,
     url: SITE_URL,
   };
 
@@ -123,7 +124,7 @@ export default function Home() {
             </Link>
           </div>
           <p className="mt-6 font-mono text-xs text-fg-faint">
-            {DOWNLOADS_BASE.replace("https://", "")} · v{APP_VERSION}
+            {DOWNLOADS_BASE.replace("https://", "")} · v{version}
           </p>
         </div>
       </section>

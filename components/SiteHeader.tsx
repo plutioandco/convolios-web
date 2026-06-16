@@ -1,9 +1,10 @@
 import Link from "next/link";
-import { APP_VERSION } from "@/lib/release";
+import { getLatestVersion } from "@/lib/release";
 
-export function SiteHeader() {
+export async function SiteHeader() {
+  const version = await getLatestVersion();
   return (
-    <header className="sticky top-0 z-50 border-b border-line bg-ink/80 backdrop-blur">
+    <header className="absolute inset-x-0 top-0 z-50">
       <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-5">
         <Link href="/" className="flex items-center gap-2.5">
           <span className="inline-block h-3 w-3 bg-fg" aria-hidden />
@@ -25,7 +26,7 @@ export function SiteHeader() {
             Channels
           </Link>
           <span className="hidden font-mono text-xs text-fg-faint md:block">
-            v{APP_VERSION}
+            v{version}
           </span>
           <Link
             href="/download"
