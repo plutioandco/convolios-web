@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { DownloadCta } from "@/components/DownloadCta";
+import { HeroShowcase } from "@/components/HeroShowcase";
 import { APP_VERSION, SITE_URL, DOWNLOADS_BASE } from "@/lib/release";
 
 const CHANNELS = [
@@ -65,23 +65,7 @@ export default function Home() {
       />
 
       {/* Hero */}
-      <section className="relative overflow-hidden border-b border-line">
-        <div className="grid-lines pointer-events-none absolute inset-0 opacity-40" aria-hidden />
-        <div className="relative mx-auto max-w-6xl px-5 py-24 sm:py-32">
-          <p className="eyebrow mb-6">One inbox · organized by person</p>
-          <h1 className="max-w-3xl text-balance text-4xl font-semibold leading-[1.05] tracking-tight sm:text-6xl">
-            The single source of truth for every conversation.
-          </h1>
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-fg-muted">
-            Convolios merges every messaging channel into one AI-enriched inbox —
-            organized by the person you’re talking to, not the app they happened
-            to use.
-          </p>
-          <div className="mt-10">
-            <DownloadCta />
-          </div>
-        </div>
-      </section>
+      <HeroShowcase />
 
       {/* Channels */}
       <section id="channels" className="border-b border-line">

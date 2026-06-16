@@ -2,7 +2,7 @@ export const SITE_URL = "https://convolios.com";
 
 export const DOWNLOADS_BASE = "https://downloads.convolios.com";
 
-export const APP_VERSION = "0.2.18";
+export const APP_VERSION = "0.2.19";
 
 export type Platform = "macos-arm" | "windows" | "macos-intel" | "linux";
 
