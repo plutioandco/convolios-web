@@ -37,7 +37,7 @@ export const DOWNLOADS: Record<Platform, DownloadTarget> = {
   "macos-arm": {
     id: "macos-arm",
     label: "Download for macOS",
-    detail: "Apple Silicon · macOS 12+",
+    detail: "Apple Silicon, macOS 12+",
     // Stable redirect → always resolves to the newest DMG from latest.json.
     href: "/download/mac",
     available: true,
@@ -45,21 +45,21 @@ export const DOWNLOADS: Record<Platform, DownloadTarget> = {
   windows: {
     id: "windows",
     label: "Download for Windows",
-    detail: "x64 · Windows 10/11",
+    detail: "x64, Windows 10/11",
     href: null,
     available: false,
   },
   "macos-intel": {
     id: "macos-intel",
     label: "Download for macOS (Intel)",
-    detail: "Intel · macOS 12+",
+    detail: "Intel, macOS 12+",
     href: null,
     available: false,
   },
   linux: {
     id: "linux",
     label: "Download for Linux",
-    detail: "AppImage · x64",
+    detail: "AppImage, x64",
     href: null,
     available: false,
   },

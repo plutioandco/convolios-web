@@ -5,7 +5,7 @@ import { getLatestVersion } from "@/lib/release";
 export const metadata: Metadata = {
   title: "Download",
   description:
-    "Download Convolios for macOS and Windows. One AI-enriched inbox for every messaging channel, organized by person.",
+    "Download Convolios for macOS and Windows. One inbox for every messaging channel, organized by person.",
   alternates: { canonical: "/download" },
 };
 
@@ -19,8 +19,7 @@ export default async function DownloadPage() {
           Download Convolios
         </h1>
         <p className="mt-4 max-w-xl text-lg text-fg-muted">
-          Free during early access. The app keeps itself up to date
-          automatically once installed.
+          Free while we&apos;re in beta. The app updates itself once installed.
         </p>
 
         <div className="mt-10">
@@ -40,7 +39,7 @@ export default async function DownloadPage() {
           </div>
           <div className="bg-ink p-6">
             <p className="eyebrow mb-2">Requirements</p>
-            <p className="text-sm text-fg-muted">macOS 12+ · Windows 10/11</p>
+            <p className="text-sm text-fg-muted">macOS 12+, Windows 10/11</p>
           </div>
         </div>
 
