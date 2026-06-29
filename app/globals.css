@@ -131,6 +131,8 @@ body {
   display: block;
   width: auto;
   height: auto;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
 }
 
 .brand-wordmark {
@@ -146,12 +148,16 @@ body {
 .brand-wordmark__mark {
   position: relative;
   flex-shrink: 0;
-  width: calc(var(--wordmark-icon-cap, 1.04) * 1cap);
   height: calc(var(--wordmark-icon-cap, 1.04) * 1cap);
+  width: auto;
 }
 
 .brand-wordmark__mark img {
   object-fit: contain;
+  height: 100%;
+  width: auto;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
 }
 
 .brand-wordmark__name {
@@ -1118,7 +1124,11 @@ button.cv-search:hover {
   margin-bottom: -180px;
 }
 
-/* ---- feature bento — full-bleed, crops of the real UI ---- */
+/* ---- feature bento — aligned with hero column (1180px) ---- */
+.bento-section {
+  width: min(100%, 1180px);
+  margin-inline: auto;
+}
 .bento-head {
   padding: 96px 24px 18px;
 }
@@ -1129,6 +1139,7 @@ button.cv-search:hover {
   gap: 1px;
   background: var(--color-line);
   border-top: 1px solid var(--color-line);
+  border-inline: 1px solid var(--color-line);
 }
 .bento-card {
   grid-column: span 2;
