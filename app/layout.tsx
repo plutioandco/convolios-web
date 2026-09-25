@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono, Fraunces } from "next/font/google";
 import "./globals.css";
 import { SITE_URL } from "@/lib/release";
+import { SiteFooter } from "@/components/SiteFooter";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -89,6 +90,7 @@ export default function RootLayout({
     >
       <body className="flex min-h-full flex-col bg-ink text-fg">
         <main className="flex-1">{children}</main>
+        <SiteFooter />
       </body>
     </html>
   );
