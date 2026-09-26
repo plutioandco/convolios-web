@@ -37,10 +37,10 @@ export default async function Home() {
           <p className="eyebrow">Your accounts and your data</p>
           <h2 className="data-note__title">What Convolios does with your email</h2>
           <p>
-            When you connect a Google account, Convolios asks for permission to read, send and label
+            When you connect a Google account, Convolios asks for permission to read, send and organise
             your Gmail. It uses that permission to show your email next to your other conversations,
-            grouped by person; to send the replies and reactions you write; and to mark emails read in
-            Gmail when you read them here, while showing changes you make in Gmail. Telegram, X and other email accounts work
+            grouped by person; to send the replies and reactions you write; and to keep read, starred,
+            archived and deleted mail in step with Gmail, both ways. Telegram, X and other email accounts work
             the same way, only when you connect them.
           </p>
           <p>

@@ -71,10 +71,11 @@ export default function PrivacyPage() {
 
       <h2>4. Data from Google and Microsoft accounts</h2>
       <p>
-        If you connect a Google account, Convolios requests permission to read, send and label your
+        If you connect a Google account, Convolios requests permission to read, send and organise your
         Gmail messages (the <code>gmail.modify</code> scope), plus your email address to identify the
         account, so it can sync your mailbox (including changes you make in Gmail), send the emails and
-        reactions you write, and mark emails read or unread in Gmail when you do so in Convolios. If
+        reactions you write, and make the changes you make in Convolios (read, starred, archived,
+        moved to Trash) in Gmail too. Convolios never permanently deletes your email. If
         you connect a Microsoft account, we request equivalent permissions for Outlook mail.
       </p>
       <p>
