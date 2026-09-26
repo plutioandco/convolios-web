@@ -30,7 +30,7 @@ export default function PrivacyPage() {
 
       <h2>2. Data we handle</h2>
       <ul>
-        <li><strong>Your account:</strong> your email address, sign-in records, and settings.</li>
+        <li><strong>Your account:</strong> your email address (or the Google account you sign in with), sign-in records, and settings.</li>
         <li>
           <strong>Connected accounts:</strong> when you connect Gmail, another email provider (over
           IMAP), Telegram, X (Twitter) direct messages or another messaging service, we receive the
