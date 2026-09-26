@@ -43,6 +43,12 @@ export default function PrivacyPage() {
           who write to you or whom you write to, because they appear in your connected accounts.
         </li>
         <li>
+          <strong>Choices you bring from another email app:</strong> if you use “Bring everything over” in
+          the desktop app, it reads which senders you allowed, blocked or marked as priority in that app
+          on your computer, and we store those addresses and choices so they apply in Convolios too. It
+          never reads that app’s passwords or sign-ins.
+        </li>
+        <li>
           <strong>Data we create for you:</strong> how messages are grouped by person, labels such as
           “urgent” or “newsletter”, search indexes, summaries, drafts, and a profile of your writing
           style if you use drafting.
