@@ -71,7 +71,7 @@ export default function PrivacyPage() {
 
       <h2>4. Data from Google and Microsoft accounts</h2>
       <p>
-        If you connect a Google account, Convolios requests permission to read, send and organise your
+        If you connect a Google account, Convolios requests permission to read, send and label your
         Gmail messages (the <code>gmail.modify</code> scope), plus your email address to identify the
         account, so it can sync your mailbox (including changes you make in Gmail), send the emails and
         reactions you write, and mark emails read or unread in Gmail when you do so in Convolios. If
