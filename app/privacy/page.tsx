@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/privacy" },
 };
 
-const UPDATED = "25 September 2026";
+const UPDATED = "26 September 2026";
 
 export default function PrivacyPage() {
   return (
@@ -32,10 +32,11 @@ export default function PrivacyPage() {
       <ul>
         <li><strong>Your account:</strong> your email address, sign-in records, and settings.</li>
         <li>
-          <strong>Connected accounts:</strong> when you connect Gmail, Outlook, another email provider
-          or a messaging service, we receive the messages in that account (content, subject,
-          attachments), their metadata (senders, recipients, dates, labels, folders, read state), and
-          the credentials needed to stay connected (for example OAuth tokens or an app password).
+          <strong>Connected accounts:</strong> when you connect Gmail, another email provider (over
+          IMAP), Telegram, X (Twitter) direct messages or another messaging service, we receive the
+          messages in that account (content, subject, attachments, reactions), their metadata
+          (senders, recipients, dates, labels, folders, read state), and the credentials needed to
+          stay connected (for example OAuth tokens, an app password or a Telegram session).
         </li>
         <li>
           <strong>People you communicate with:</strong> names, addresses and message content from people
@@ -71,13 +72,14 @@ export default function PrivacyPage() {
       <h2>4. Data from Google and Microsoft accounts</h2>
       <p>
         If you connect a Google account, Convolios requests permission to read, send and organise your
-        Gmail messages (the <code>gmail.modify</code> scope) so it can sync your mailbox, send the
-        replies you write, and keep read, starred, archived and deleted state in step with Gmail. If
+        Gmail messages (the <code>gmail.modify</code> scope), plus your email address to identify the
+        account, so it can sync your mailbox, send the emails and reactions you write, and keep read,
+        starred, archived and deleted state in step with Gmail. If
         you connect a Microsoft account, we request equivalent permissions for Outlook mail.
       </p>
       <p>
         Convolios’s use and transfer to any other app of information received from Google APIs will
-        adhere to the{" "}
+        adhere to{" "}
         <a href="https://developers.google.com/terms/api-services-user-data-policy">
           Google API Services User Data Policy
         </a>
@@ -135,10 +137,9 @@ export default function PrivacyPage() {
         <li><strong>turbopuffer</strong>: search index (EU, Frankfurt)</li>
         <li><strong>Google Cloud</strong>: AI processing, key management and Gmail change notifications (EU)</li>
         <li><strong>Expo</strong>: delivering push notifications to your phone (notifications contain no message content)</li>
-        <li><strong>Postmark</strong>: our own emails to you, such as sign-in codes</li>
+        <li><strong>Resend</strong>: our own emails to you, such as sign-in codes</li>
         <li><strong>Better Stack</strong> and <strong>Sentry</strong>: monitoring and error reporting, without message content</li>
         <li><strong>Vercel</strong>: hosting this website</li>
-        <li><strong>Unipile</strong> (France): connecting certain messaging services, only if you connect them</li>
         <li><strong>Paddle</strong>: payments and tax, when paid plans launch</li>
       </ul>
       <p>
@@ -147,7 +148,7 @@ export default function PrivacyPage() {
         contractual clauses.
       </p>
       <p>
-        The services you connect (such as Google, Microsoft, WhatsApp or your email provider) handle
+        The services you connect (such as Google, Telegram, X or your email provider) handle
         your messages under their own terms and privacy policies.
       </p>
 

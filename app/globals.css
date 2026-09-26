@@ -1634,3 +1634,28 @@ button.cv-search:hover {
 .site-footer__links a:hover {
   color: var(--color-fg);
 }
+
+.data-note {
+  width: min(100%, 1180px);
+  margin-inline: auto;
+  padding: 72px 24px;
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--color-fg-muted);
+}
+.data-note > p:not(.eyebrow) {
+  max-width: 720px;
+  margin: 0 0 14px;
+}
+.data-note__title {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 28px;
+  line-height: 1.2;
+  color: var(--color-fg);
+  margin: 10px 0 16px;
+}
+.data-note a {
+  color: var(--color-fg);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
