@@ -39,9 +39,11 @@ export default async function Home() {
           <p>
             When you connect a Google account, Convolios asks for permission to read, send and organise
             your Gmail. It uses that permission to show your email next to your other conversations,
-            grouped by person; to send the replies and reactions you write; and to keep read, starred,
-            archived and deleted mail in step with Gmail, both ways. Telegram, X and other email accounts work
-            the same way, only when you connect them.
+            grouped by person; to send the replies and reactions you write; and to keep read, unread,
+            starred and deleted mail in step with Gmail, both ways. It also shows people&rsquo;s names and
+            photos from your Google contacts, the way Gmail does, and, if you connect Google Calendar, keeps
+            your events and Convolios plans in step. Telegram, X and other email accounts work the same way,
+            only when you connect them.
           </p>
           <p>
             Your messages are encrypted with a key for your account and stored in the EU. We never sell

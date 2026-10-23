@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/privacy" },
 };
 
-const UPDATED = "26 September 2026";
+const UPDATED = "23 October 2026";
 
 export default function PrivacyPage() {
   return (
@@ -37,6 +37,11 @@ export default function PrivacyPage() {
           messages in that account (content, subject, attachments, reactions), their metadata
           (senders, recipients, dates, labels, folders, read state), and the credentials needed to
           stay connected (for example OAuth tokens, an app password or a Telegram session).
+        </li>
+        <li>
+          <strong>Google contacts and calendar:</strong> when you connect a Google account, the names,
+          email addresses and photos of your Google contacts and “Other contacts”; and if you also
+          connect Google Calendar, your list of calendars and their events.
         </li>
         <li>
           <strong>People you communicate with:</strong> names, addresses and message content from people
@@ -76,13 +81,40 @@ export default function PrivacyPage() {
       </p>
 
       <h2>4. Data from Google and Microsoft accounts</h2>
+      <p>If you connect a Google account, Convolios asks for these permissions, and uses each only as described:</p>
+      <ul>
+        <li>
+          <strong>Gmail</strong> (<code>gmail.modify</code>): to sync your mailbox (including changes you
+          make in Gmail), send the emails and reactions you write, and make the changes you make in
+          Convolios (read, unread, starred, moved to Trash) in Gmail too. Convolios never permanently
+          deletes your email.
+        </li>
+        <li>
+          <strong>Your Google account</strong> (<code>openid</code>, <code>email</code>,{" "}
+          <code>profile</code>): your email address to identify the account and sign you in, and your
+          profile photo for your own picture in the app.
+        </li>
+        <li>
+          <strong>Contacts</strong> (<code>contacts.readonly</code>, <code>contacts.other.readonly</code>):
+          only the names, email addresses and photos of your Google contacts and “Other contacts”, to
+          show who people are, the way Gmail does. A contact’s name is used for someone who has no other
+          name in Convolios, and then appears wherever that person does. Convolios never changes your
+          contacts. These permissions are optional.
+        </li>
+        <li>
+          <strong>Google Calendar</strong> (<code>calendar.events</code>,{" "}
+          <code>calendar.calendarlist.readonly</code>), only if you connect it: to show your calendars
+          and events in Convolios, keep the plans you make in Convolios on your Google calendar (when a
+          plan has guests, Google emails them the invitation and any changes), and use the times you are
+          busy to suggest other times when someone proposes a time that clashes.
+        </li>
+      </ul>
       <p>
-        If you connect a Google account, Convolios requests permission to read, send and organise your
-        Gmail messages (the <code>gmail.modify</code> scope), plus your email address to identify the
-        account, so it can sync your mailbox (including changes you make in Gmail), send the emails and
-        reactions you write, and make the changes you make in Convolios (read, starred, archived,
-        moved to Trash) in Gmail too. Convolios never permanently deletes your email. If
-        you connect a Microsoft account, we request equivalent permissions for Outlook mail.
+        Your Gmail messages and attachments are never sent to AI features. Two things from Google can
+        be: the name you have for a person, when AI reads your chats with them, and the start and end
+        times of busy events on your calendar (never their titles or details), when AI writes a
+        suggested reply offering other times. If you connect a Microsoft account, we request equivalent
+        permissions for Outlook mail.
       </p>
       <p>
         Convolios’s use and transfer to any other app of information received from Google APIs will
