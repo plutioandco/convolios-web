@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { connection } from "next/server";
 import { Geist, Geist_Mono, Fraunces } from "next/font/google";
 import "./globals.css";
 import { SITE_URL } from "@/lib/release";
@@ -78,11 +79,13 @@ export const viewport: Viewport = {
   viewportFit: "cover",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Render per request so each page carries the nonce from proxy.ts (a static page has none and its scripts would be blocked).
+  await connection();
   return (
     <html
       lang="en"
