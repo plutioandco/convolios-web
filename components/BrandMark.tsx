@@ -1,6 +1,6 @@
-import Image from "next/image";
+import { LogoImg } from "@/components/LogoImg";
 
-/** Icon-only mark — for full lockup (icon + name), use BrandWordmark. */
+/** Icon-only mark. For the full lockup (icon + name), use BrandWordmark. */
 export function BrandMark({
   className,
   size = 40,
@@ -9,11 +9,9 @@ export function BrandMark({
   size?: number;
 }) {
   return (
-    <Image
-      src="/logo.png"
+    <LogoImg
+      size={size}
       alt="Convolios"
-      width={size}
-      height={size}
       draggable={false}
       className={`brand-mark ${className ?? ""}`.trim()}
     />

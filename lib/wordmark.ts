@@ -5,3 +5,7 @@ export const WORDMARK_TEXT_SCALE = 0.828;
 export const WORDMARK_ICON_CAP = 1.04;
 export const WORDMARK_GAP_EM = 0.28;
 export const WORDMARK_CAP_TO_EM = 0.73;
+
+export function wordmarkIconSize(size: number) {
+  return Math.round(size * WORDMARK_ICON_CAP * WORDMARK_CAP_TO_EM);
+}

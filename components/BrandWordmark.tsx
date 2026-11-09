@@ -1,9 +1,10 @@
-import Image from "next/image";
 import type { CSSProperties } from "react";
+import { LogoImg } from "@/components/LogoImg";
 import {
   WORDMARK_GAP_EM,
   WORDMARK_ICON_CAP,
   WORDMARK_TEXT_SCALE,
+  wordmarkIconSize,
 } from "@/lib/wordmark";
 
 function wordmarkStyle(size: number): CSSProperties {
@@ -30,13 +31,7 @@ export function BrandWordmark({
       aria-label="Convolios"
     >
       <span className="brand-wordmark__mark" aria-hidden>
-        <Image
-          src="/logo.png"
-          alt=""
-          fill
-          draggable={false}
-          sizes={`${Math.round(size * 0.8)}px`}
-        />
+        <LogoImg size={wordmarkIconSize(size)} draggable={false} />
       </span>
       <span className="brand-wordmark__name">Convolios</span>
     </span>

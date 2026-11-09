@@ -125,14 +125,10 @@ body {
 }
 
 /* Shared column — header copy and app window share one left edge */
-/* Convolios mark — pixel Greek head in speech bubble (`public/logo.png`). */
+/* Convolios mark: Greek head in a speech bubble, a vector (`public/logo.svg`). Never pixelated. */
 .brand-mark {
   flex: none;
   display: block;
-  width: auto;
-  height: auto;
-  image-rendering: pixelated;
-  image-rendering: crisp-edges;
 }
 
 .brand-wordmark {
@@ -156,8 +152,7 @@ body {
   object-fit: contain;
   height: 100%;
   width: auto;
-  image-rendering: pixelated;
-  image-rendering: crisp-edges;
+  display: block;
 }
 
 .brand-wordmark__name {
